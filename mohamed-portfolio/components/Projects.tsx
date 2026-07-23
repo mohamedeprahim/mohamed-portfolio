@@ -74,11 +74,14 @@ export default function Projects() {
               viewport={{ once: true }}
               className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg hover:-translate-y-3 transition-all duration-300"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-56 object-cover"
-              />
+             <div className="relative w-full h-56">
+  <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    className="object-cover rounded-t-3xl"
+  />
+</div>
 
               <div className="p-6">
                 <h3 className="text-2xl font-bold">
