@@ -2,21 +2,18 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
-
   const { theme, setTheme } = useTheme();
 
   const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
 
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMounted(true);
   }, []);
-
 
   const links = [
     {
@@ -37,7 +34,6 @@ export default function Navbar() {
     },
   ];
 
-
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,9 +41,7 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
       className="fixed top-0 left-0 w-full z-50"
     >
-
       <div className="max-w-6xl mx-auto mt-5 px-4 md:px-6">
-
         <div
           className="
           flex justify-between items-center
@@ -58,22 +52,13 @@ export default function Navbar() {
           px-5 py-4
           "
         >
-
-          {/* Logo */}
-
           <h1 className="text-2xl font-bold">
             Mohamed
             <span className="text-blue-500">.</span>
           </h1>
 
-
-
-          {/* Desktop Links */}
-
           <div className="hidden md:flex items-center gap-8 text-gray-300">
-
             {links.map((link) => (
-
               <a
                 key={link.name}
                 href={link.href}
@@ -81,95 +66,45 @@ export default function Navbar() {
               >
                 {link.name}
               </a>
-
             ))}
-
-
-
-            {/* Theme Button */}
 
             {mounted && (
               <button
                 onClick={() =>
-                  setTheme(
-                    theme === "dark"
-                      ? "light"
-                      : "dark"
-                  )
+                  setTheme(theme === "dark" ? "light" : "dark")
                 }
                 className="text-xl hover:text-blue-500 transition"
               >
-                {
-                  theme === "dark"
-                    ? <FaSun />
-                    : <FaMoon />
-                }
+                {theme === "dark" ? <FaSun /> : <FaMoon />}
               </button>
             )}
-
           </div>
 
-
-
-          {/* Mobile Buttons */}
-
           <div className="flex md:hidden items-center gap-4">
-
-
             {mounted && (
               <button
                 onClick={() =>
-                  setTheme(
-                    theme === "dark"
-                      ? "light"
-                      : "dark"
-                  )
+                  setTheme(theme === "dark" ? "light" : "dark")
                 }
                 className="text-xl"
               >
-                {
-                  theme === "dark"
-                    ? <FaMoon />
-                    : <FaSun />
-                }
+                {theme === "dark" ? <FaMoon /> : <FaSun />}
               </button>
             )}
-
-
 
             <button
               onClick={() => setOpen(!open)}
               className="text-xl"
             >
-              {
-                open
-                  ? <FaTimes />
-                  : <FaBars />
-              }
+              {open ? <FaTimes /> : <FaBars />}
             </button>
-
-
           </div>
-
-
         </div>
 
-
-
-        {/* Mobile Menu */}
-
         {open && (
-
           <motion.div
-            initial={{
-              opacity:0,
-              y:-20
-            }}
-            animate={{
-              opacity:1,
-              y:0
-            }}
-
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="
             md:hidden
             mt-3
@@ -180,11 +115,8 @@ export default function Navbar() {
             p-6
             "
           >
-
             <div className="flex flex-col gap-5">
-
-              {links.map((link)=>(
-
+              {links.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -193,18 +125,11 @@ export default function Navbar() {
                 >
                   {link.name}
                 </a>
-
               ))}
-
             </div>
-
           </motion.div>
-
         )}
-
-
       </div>
-
     </motion.nav>
   );
 }

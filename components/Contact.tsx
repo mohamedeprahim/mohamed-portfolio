@@ -7,18 +7,14 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-
 export default function Contact() {
-
   return (
-
     <section
       id="contact"
       className="py-24 px-4 sm:px-6"
     >
 
       <div className="max-w-5xl mx-auto">
-
 
         <motion.h2
           initial={{
@@ -47,7 +43,6 @@ export default function Contact() {
         </motion.h2>
 
 
-
         <motion.div
           initial={{
             opacity: 0,
@@ -74,7 +69,6 @@ export default function Contact() {
           "
         >
 
-
           <div
             className="
             grid
@@ -83,16 +77,13 @@ export default function Contact() {
             "
           >
 
-
-            {/* Info */}
-
             <div>
 
               <h3 className="
                 text-2xl
                 font-bold
               ">
-                Let's work together
+                Let&apos;s work together
               </h3>
 
 
@@ -101,8 +92,8 @@ export default function Contact() {
                 text-gray-400
                 leading-relaxed
               ">
-                I'm a Frontend Developer specialized in React.js
-                and Next.js. I'm currently looking for internship
+                I&apos;m a Frontend Developer specialized in React.js
+                and Next.js. I&apos;m currently looking for internship
                 opportunities and new challenges.
               </p>
 
@@ -128,7 +119,6 @@ export default function Contact() {
                 </a>
 
 
-
                 <a
                   href="https://github.com/mohamedeprahim"
                   target="_blank"
@@ -141,7 +131,6 @@ export default function Contact() {
                 >
                   <FaGithub />
                 </a>
-
 
 
                 <a
@@ -178,15 +167,11 @@ export default function Contact() {
 
 
 
-
-            {/* Contact Button */}
-
             <div className="
               flex
               items-center
               justify-center
             ">
-
 
               <a
                 href="mailto:mohamedeprahimblal@gmail.com"
@@ -204,21 +189,15 @@ export default function Contact() {
                 Send Me Email
               </a>
 
-
             </div>
-
 
 
           </div>
 
-
         </motion.div>
-
 
       </div>
 
-
     </section>
-
   );
 }

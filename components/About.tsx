@@ -19,7 +19,6 @@ export default function About() {
     },
   ];
 
-
   return (
     <section
       id="about"
@@ -27,7 +26,6 @@ export default function About() {
     >
 
       <div className="max-w-5xl mx-auto">
-
 
         <motion.h2
           initial={{
@@ -54,7 +52,6 @@ export default function About() {
         >
           About Me
         </motion.h2>
-
 
 
         <motion.div
@@ -84,7 +81,6 @@ export default function About() {
           "
         >
 
-
           <p
             className="
             text-gray-300
@@ -93,7 +89,7 @@ export default function About() {
             leading-relaxed
             "
           >
-            I'm Mohamed Ibrahim, a Frontend Developer specialized in
+            I&apos;m Mohamed Ibrahim, a Frontend Developer specialized in
             React.js and Next.js. I build modern, responsive and
             interactive web applications with clean code and great
             user experience.
@@ -111,7 +107,6 @@ export default function About() {
           </p>
 
 
-
           <div
             className="
             grid
@@ -125,25 +120,24 @@ export default function About() {
             {info.map((item, index) => (
 
               <motion.div
-
                 key={item.title}
 
                 initial={{
-                  opacity:0,
-                  y:30,
+                  opacity: 0,
+                  y: 30,
                 }}
 
                 whileInView={{
-                  opacity:1,
-                  y:0,
+                  opacity: 1,
+                  y: 0,
                 }}
 
                 transition={{
-                  delay:index * 0.2,
+                  delay: index * 0.2,
                 }}
 
                 viewport={{
-                  once:true,
+                  once: true,
                 }}
 
                 className="
@@ -172,7 +166,6 @@ export default function About() {
                   {item.title}
                 </p>
 
-
               </motion.div>
 
             ))}
@@ -189,34 +182,32 @@ export default function About() {
 
             <div className="flex flex-wrap justify-center gap-3">
 
-              {
-                [
-                  "React.js",
-                  "Next.js",
-                  "JavaScript",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Git"
-                ].map((tech)=>(
+              {[
+                "React.js",
+                "Next.js",
+                "JavaScript",
+                "TypeScript",
+                "Tailwind CSS",
+                "Git"
+              ].map((tech) => (
 
-                  <span
-                    key={tech}
-                    className="
-                    px-4
-                    py-2
-                    rounded-full
-                    bg-blue-500/10
-                    border
-                    border-blue-500/20
-                    text-sm
-                    text-blue-400
-                    "
-                  >
-                    {tech}
-                  </span>
+                <span
+                  key={tech}
+                  className="
+                  px-4
+                  py-2
+                  rounded-full
+                  bg-blue-500/10
+                  border
+                  border-blue-500/20
+                  text-sm
+                  text-blue-400
+                  "
+                >
+                  {tech}
+                </span>
 
-                ))
-              }
+              ))}
 
             </div>
 
@@ -224,7 +215,6 @@ export default function About() {
 
 
         </motion.div>
-
 
       </div>
 
